@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+    {% block 'main' %}
+
+            <div class="col-md-3 mt-5">
+                <h2>Course Dashbord</h2>
+                <br>
+                <!--<button onclick="abc()">Click Me</button>-->
+                <!--
+                <a href="/create"><button type="button" class="btn btn-primary mt-3">Create Task</button></a>
+                -->
+                <a href="/all">All</a>
+                <h3>SORT BY</h3>
+                <hr>
+                <h5>By Fees</h5>
+                
+                <a href="/ltoh">Low To High</a><br>
+                <a href="/htol">High To Low</a>
+            </div>
+
+            <div class="col-md-9 mt-5">
+                <table class="table">
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Durations(Hrs)</th>
+                        <th>Category</th>
+                        <th>Course Fee</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+
+                    {% for d in data %}
+                        <tr>
+                            <td>{{d.cname}}</td>
+                            <td>{{d.cdur}}</td>
+                            <td>{{d.ccat}}</td>
+                            <td>{{d.cprice}}</td>
+                            <td><a href="/edit/{{d.id}}"><button class="btn btn-warning">Edit</button></a></td>
+                            <td><a href="/delete/{{d.id}}"><button class="btn btn-danger">Delete</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+        
+    
+    
+    {% endblock 'main' %}
+   
+

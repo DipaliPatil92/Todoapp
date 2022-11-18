@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block 'main' %}
+<h2 class="mt-5">Create Task</h2>
+<div class="col-md-8 mt-3 m-auto">
+    
+    <form method="POST" action="/create">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="tid" class="form-label"><b>Title:</b></label>
+            <input type="text" class="form-control" name="t" id="tid" placeholder="Enter Title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="detid" class="form-label"><b>Details:</b></label>
+            <textarea class="form-control" name="det" id="detid" rows="3" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="dtid" class="form-label"><b>Date:</b></label>
+            <input type="date" class="form-control" name="dt" id="dtid" required>
+        </div>
+        <div class="mb-3">
+            
+            <input type="submit" class="form-control btn btn-primary" name="send" value="CREATE">
+        </div>
+
+    </form>
+
+</div>
+
+
+{% endblock 'main' %}

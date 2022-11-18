@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+    {% block 'main' %}
+
+    
+            <div class="col-md-3 mt-5">
+                <h2>Dashbord</h2>
+                <!--<button onclick="abc()">Click Me</button>-->
+                <a href="/create"><button type="button" class="btn btn-primary mt-3">Create Task</button></a>
+            </div>
+
+            <div class="col-md-9 mt-5">
+                <table class="table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Details</th>
+                        <th>date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+
+                    {% for d in data %}
+                        <tr>
+                            <td>{{d.title}}</td>
+                            <td>{{d.details}}</td>
+                            <td>{{d.date}}</td>
+                            <td><a href="/edit/{{d.id}}"><button class="btn btn-warning">Edit</button></a></td>
+                            <td><a href="/delete/{{d.id}}"><button class="btn btn-danger">Delete</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+        
+    
+    
+    {% endblock 'main' %}
+   
+

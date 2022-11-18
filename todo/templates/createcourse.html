@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Course</title>
+</head>
+<body>
+    <form method="POST" action="/cview">
+        {% csrf_token %}
+        <table>
+            {{form}}
+            <tr>
+                <td>
+                    <input type="submit" name="Send" value="Create">
+                </td>
+
+            </tr>
+
+        </table>
+        
+
+    </form>
+</body>
+</html>
